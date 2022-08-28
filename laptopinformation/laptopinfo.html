@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../informationpage/infopageimg/logo.png">
+    <link rel="stylesheet" href="laptop.css">
+    <script src="laptopinfo.js" defer></script>
+    <title>ლეპტოპის ინფორმაცია</title>
+</head>
+<body>
+    <div class="backarrow">
+        <a href="../index.html"><img src="../informationpage/infopageimg/backarrow.png" alt="backarrow"></a>
+    </div>
+    <!--main section-->
+    <main>
+    <div class="pagenames">
+        <a href="../informationpage/info.html">თანამშრომლის ინფო</a>
+        <a href="../laptopinformation/laptopinfo.html">ლეპტოპის მახასიათებლები</a>
+    </div>
+    <section>
+            <form>
+                <div class="mainform">
+                    <!--suratis atvirtva-->
+                <div class="uploadimg">
+                    <input type="file" name="upload" class="upload" accept="image/*">
+                    <h2 class="laptoppic">ჩააგდე ან ატვირთე ლეპტოპის ფოტო</h2>
+                </div>
+                <!--konpiuteris berndebi-->
+                <div class="nameandbrand">
+                    <div class="laptopnm">
+                    <label for="text">ლეპტოპის სახელი</label></br>
+                    <input type="text" placeholder="ლეპტოპის სახელი" class="laptopname">
+                    <h2 class="mustwrite">ლათინური ასოები, ციფრები, !@#$%%^*()_+=</h2>
+                </div>
+                    <select class="brand">
+                        <option disabled selected value>ლეპტოპის ბრენდი</option>
+                    </select>
+                </div>
+                <hr>
+                <!--cpu-->
+                <div class="cpu">
+                    <select class="cpuoption">
+                        <option disabled selected value>CPU</option>
+                    </select>
+                    <div class="cpubirtvi">
+                        <label>CPU-ს ბირთვი</label></br>
+                        <input type="number" class="birtvi" placeholder="14">
+                        <h2 class="mustwrite">მხოლოდ ციფრები</h2>
+                    </div>
+                    <div class="cpunakadi">
+                        <label>CPU-ს ბირთვი</label></br>
+                        <input type="number" class="nakadi" placeholder="365">
+                        <h2 class="mustwrite">მხოლოდ ციფრები</h2>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+    </main>
+    <!--logo-->
+    <div class="logo">
+        <img src="../informationpage/infopageimg/logo.png" alt="logo">
+    </div>
+</body>
+</html>

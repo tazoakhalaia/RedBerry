@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../informationpage/infopageimg/logo.png">
+    <link rel="stylesheet" href="info.css">
+    <script src="info.js" defer></script>
+    <title>თანამშრომლის ინფორმაცია</title>
+</head>
+<body>
+     <div class="backarrow">
+        <a href="../index.html"><img src="./infopageimg/backarrow.png" alt="backarrow"></a>
+    </div>
+    <!--main section-->
+    <main>
+    <div class="pagenames">
+        <h2>თანამშრომლის ინფო</h2>
+        <a href="../laptopinformation/laptopinfo.html"><h2>ლეპტოპის მახასიათებლები</h2></a>
+    </div>
+    <section>
+            <form>
+                <!--saxeli da gvari-->
+            <div class="namelastnm">
+                <div class="name">
+                <label class="saxeli" for="text">სახელი</label>
+            </br>
+                <input type="text" onkeyup="check()" class="fullname" placeholder="სახელი" name="name" required>
+                <h4>მინიმუმ 2 სიმბოლო, ქართული ასოები</h4>
+            </div>
+            <div class="lastname">
+                <label style="margin-left: 20px;" for="text">გვარი</label>
+            </br>
+                <input style="margin-left: 20px;" onkeyup="checkLastName()" class="lstname" type="text" placeholder="გვარი" name="lastname" required>
+                <h4 class="lastnameh4" style="margin-left: 20px;">მინიმუმ 2 სიმბოლო, ქართული ასოები</h4>
+            </div>
+            </div>
+            <!--timis archeva-->
+            <select onchange="change()" class="team" required>
+                <option disabled selected value>თიმი</option>
+            </select></br>
+            <!--poziciis archeva-->
+            <select class="position" required>
+                <option disabled selected value>პოზიცია</option>
+            </select></br>
+            <!--meili-->
+            <div class="mail">
+            <label for="email">მეილი</label></br>
+            <input class="email" onkeyup="checkemail()" type="email" placeholder="example@redberry.ge" required>
+            <h4 class="mailtext">უნდა მთავრდებოდეს @redberry.ge-ით</h4>
+        </div>
+        <!--telefoni-->
+        <div class="phone">
+            <label for="number">ტელეფონის ნომერი</label></br>
+            <input  type="number" class="telefoni"  placeholder="+995 598 00 00 00" required>
+            <h4>უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</h4>
+        </div>
+        <!--shemdeg gverdze gadasvla-->
+       <a href="../laptopinformation/laptopinfo.html" class="ponterevents" id="button"  onclick="addData()">შემდეგი</a>
+        </form>
+    </section>
+    </main>
+    <!--logo-->
+    <div class="logo">
+        <img src="./infopageimg/logo.png" alt="logo">
+    </div>
+</body>
+</html>

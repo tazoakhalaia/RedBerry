@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+@font-face {
+    font-family: Hel;
+    src: url(./Font/HelveticaNeue.ttc);
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.redberrylogo {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.mainlogo {
+    margin-top: 80px;
+}
+
+.mainbuttons {
+    margin-top: 80px;
+}
+button {
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    width: 387px;
+    height: 60px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #62A1EB;
+    font-family: Hel;
+    color: #FFFFFF;
+    font-size: 20px;
+    cursor: pointer;
+}
+
