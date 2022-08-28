@@ -109,6 +109,7 @@ function checkemail() {
 
 const btn = document.querySelector('#button');
 const nomeri = document.querySelector('.telefoni');
+const nomeriregex = /^(\+?995)?(79\d{7}|5\d{8})$/;
 function addData() {
     localStorage.setItem("name", JSON.stringify(inputName.value));
     localStorage.setItem("lastName", JSON.stringify(inputlastName.value));
@@ -120,7 +121,7 @@ function addData() {
 
 window.addEventListener('input', ()=> {
     if(inputName.value.match(regex) && inputlastName.value.match(regex) &&
-    email.value.match(emailRegex) && nomeri.value != ""){
+    email.value.match(emailRegex) && nomeri.value.match(nomeriregex)){
         btn.classList.remove('ponterevents');
     }else {
         btn.classList.add('ponterevents');

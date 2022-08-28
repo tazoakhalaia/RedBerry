@@ -188,3 +188,95 @@ hr {
     text-align: center;
     margin-top: 40px;
 }
+
+.ponterevents {
+    pointer-events: none;
+}
+
+/*ram*/
+.memory {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;   
+}
+
+.ramgb {
+    border: 2px solid #62A1EB;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 5px;
+    height: 40px;
+    width: 200px;
+    margin-top: 10px;
+}
+
+.typeram {
+    margin-right: 250px;
+}
+
+.rmtype {
+    margin-top: 15px;
+}
+
+.priceanddate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date,
+.price {
+    margin-top: 40px;
+}
+
+.ndate {
+    border: 2px solid #62A1EB;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 5px;
+    height: 40px;
+    width: 300px;
+    margin-top: 10px;
+}
+
+.nprice {
+    border: 2px solid #62A1EB;
+    outline: none;
+    border-radius: 5px;
+    padding-left: 5px;
+    height: 40px;
+    width: 300px;
+    margin-top: 25px;
+}
+
+.neworold {
+    margin-top: 40px;
+}
+
+.backandsave {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.goback {
+    color: #62A1EB;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.save {
+    position: absolute;
+    width: 250px;
+    height: 50px;
+    background-color: #62A1EB;
+    font-family: Hel;
+    color: #FFFFFF;
+    text-align: center;
+    padding-top: 12px;
+    border-radius: 4px;
+    right: -120px;
+
+}

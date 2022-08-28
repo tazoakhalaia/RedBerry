@@ -17,7 +17,7 @@
     <main>
     <div class="pagenames">
         <a href="../informationpage/info.html">თანამშრომლის ინფო</a>
-        <a href="../laptopinformation/laptopinfo.html">ლეპტოპის მახასიათებლები</a>
+        <a href="../laptopinformation/laptopinfo.html" class="maxaas">ლეპტოპის მახასიათებლები</a>
     </div>
     <section>
             <form>
@@ -34,26 +34,57 @@
                     <input type="text" placeholder="ლეპტოპის სახელი" class="laptopname">
                     <h2 class="mustwrite">ლათინური ასოები, ციფრები, !@#$%%^*()_+=</h2>
                 </div>
-                    <select class="brand">
+                    <select class="brand" required>
                         <option disabled selected value>ლეპტოპის ბრენდი</option>
                     </select>
                 </div>
                 <hr>
                 <!--cpu-->
                 <div class="cpu">
-                    <select class="cpuoption">
+                    <select class="cpuoption" required>
                         <option disabled selected value>CPU</option>
                     </select>
                     <div class="cpubirtvi">
                         <label>CPU-ს ბირთვი</label></br>
-                        <input type="number" class="birtvi" placeholder="14">
+                        <input type="number" class="birtvi" placeholder="14" required>
                         <h2 class="mustwrite">მხოლოდ ციფრები</h2>
                     </div>
                     <div class="cpunakadi">
                         <label>CPU-ს ბირთვი</label></br>
-                        <input type="number" class="nakadi" placeholder="365">
+                        <input type="number" class="nakadi" placeholder="365" required>
                         <h2 class="mustwrite">მხოლოდ ციფრები</h2>
                     </div>
+                </div>
+                <div class="memory">
+                    <div class="ram">
+                        <label>ლეპტოპის RAM(GB)</label></br>
+                        <input type="number" class="ramgb" placeholder="16" required>
+                        <h2 class="mustwrite">მხოლოდ ციფრები</h2>
+                    </div>
+                    <div class="typeram">
+                        <label>მეხსიერების ტიპი</label></br>
+                        <input type="radio" class="rmtype" required> SDD
+                        <input style="margin-left: 30px;" type="radio" class="rmtype" required> HDD
+                    </div>
+                </div>
+                <div class="priceanddate">
+                    <div class="date">
+                        <label>შეძენის რიცხვი(არჩევითი)</label></br>
+                        <input type="date" class="ndate" placeholder="დდ/თთ/წწწწ" required>
+                    </div><div class="price">
+                        <label>ლეპტოპის ფასი</label></br>
+                        <input type="number" class="nprice" placeholder="0000" required>
+                        <h2 class="mustwrite">მხოლოდ ციფრები</h2>
+                    </div>
+                </div>
+                <div class="neworold">
+                    <label>ლეპტოპის მდგომარეობა</label></br>
+                    <input type="radio" class="mdgomareoba" required> ახალი
+                    <input style="margin-left: 30px;" type="radio" class="mdgomareoba" required> მეორადი
+                </div>
+                <div class="backandsave">
+                    <a onclick="history.back()" class="goback">უკან</a>
+                    <a href="#" class="save" onclick="save()">დამახსოვრება</a>
                 </div>
             </div>
         </form>
