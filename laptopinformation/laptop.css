@@ -267,7 +267,7 @@ hr {
     margin-top: 10px;
 }
 
-.save {
+#save {
     position: absolute;
     width: 250px;
     height: 50px;
@@ -279,4 +279,8 @@ hr {
     border-radius: 4px;
     right: -120px;
 
+}
+
+.ponterevents {
+    pointer-events: none;
 }
