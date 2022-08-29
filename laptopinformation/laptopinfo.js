@@ -39,18 +39,24 @@ const cpuoption = document.querySelector('.cpuoption');
 const birtvi = document.querySelector(".birtvi");
 const nakadi  = document.querySelector('.nakadi');
 const rami = document.querySelector('.ramgb');
-const mexsierebistipi = document.querySelector('.rmtype');
+const ssd = document.querySelector('#fradio');
+ssd.value = "SSD";
+const hdd = document.querySelector('#sradio');
+hdd.value = "HDD";
 const tarigi = document.querySelector('.ndate');
 const fasi = document.querySelector('.nprice');
-const laptopneworold = document.querySelector('.mdgomareoba');
 const body = document.querySelector('body');
-const saveInfo = document.querySelector('.save');
+const img = document.querySelector('.img');
 
 upload.addEventListener('change', ()=>{
     if (upload.files && upload.files[0]) {
         var reader = new FileReader();
         reader.onload = function () {
             localStorage.setItem("foto",reader.result);
+            const r = reader.result;
+            img.src = r;
+            img.style.display = "block";
+            upload.style.display = "none";
         }
         reader.readAsDataURL(upload.files[0]);
     }
@@ -63,24 +69,34 @@ function save() {
     localStorage.setItem("birtvi", JSON.stringify(birtvi.value));
     localStorage.setItem("nakadi", JSON.stringify(nakadi.value));
     localStorage.setItem("ram", JSON.stringify(rami.value));
-    localStorage.setItem("typeofram", JSON.stringify(mexsierebistipi.value));
+    if(ssd.checked){
+        localStorage.setItem("typeofram", JSON.stringify(ssd.value));
+    }else {
+        localStorage.setItem("typeofram", JSON.stringify(hdd.value));
+    }
     localStorage.setItem("date", JSON.stringify(tarigi.value));
     localStorage.setItem("price", JSON.stringify(fasi.value));
-    localStorage.setItem("new or old", JSON.stringify(laptopneworold.value));
+    if(axali.checked){
+        localStorage.setItem("new or old", JSON.stringify(axali.value));
+    }else{
+        localStorage.setItem("new or old", JSON.stringify(meoreadi.value));
+    }
     fetch('https://jsonplaceholder.typicode.com/posts', {
         method: 'POST',
         body: JSON.stringify({
             title: laptopname.value,
             brendii: brendi.value,
-            surati: upload.value,
+            surati: localStorage.getItem("foto"),
             cpu: cpuoption.value,
             birtvii: birtvi.value,
             nakaddi: nakadi.value,
             ramm: rami.value,
-            ramtype: mexsierebistipi.value,
+            ramtype: ssd.value,
+            ramtypee: hdd.value,
             dro: tarigi.value,
             tanxa: fasi.value,
-            axalianmeoradi: laptopneworold.value
+            axalii: axali.value,
+            meoradii: meoreadi.value,
         }),
         headers: {
             "Content-Type":"application/json; charset=UTF-8"
@@ -91,3 +107,28 @@ function save() {
         console.log(datas);
     })
 }
+
+
+const fradio = document.querySelector('#fradio');
+const sradio = document.querySelector('#sradio');
+const axali = document.querySelector('#new');
+const meoreadi = document.querySelector('#old');
+axali.value = "ახალი";
+meoreadi.value = "მეორადი";
+
+window.addEventListener('change', (e)=> {
+        if(!e.target.contains(fradio)){
+            fradio.checked = false;
+        }
+    
+        if(!e.target.contains(sradio)){
+            sradio.checked = false;
+        }
+        if(!e.target.contains(axali)){
+            axali.checked = false;
+        }
+        if(!e.target.contains(meoreadi)){
+            meoreadi.checked = false;
+        }
+   
+})

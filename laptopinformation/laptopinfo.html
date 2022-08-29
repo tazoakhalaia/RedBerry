@@ -17,7 +17,7 @@
     <main>
     <div class="pagenames">
         <a href="../informationpage/info.html">თანამშრომლის ინფო</a>
-        <a href="../laptopinformation/laptopinfo.html" class="maxaas">ლეპტოპის მახასიათებლები</a>
+        <a href="../laptopinformation/laptopinfo.html" >ლეპტოპის მახასიათებლები</a>
     </div>
     <section>
             <form method="post">
@@ -26,6 +26,7 @@
                 <div class="uploadimg">
                     <input type="file" name="upload" class="upload" accept="image/*">
                     <h2 class="laptoppic">ჩააგდე ან ატვირთე ლეპტოპის ფოტო</h2>
+                    <img class="img" src="">
                 </div>
                 <!--konpiuteris berndebi-->
                 <div class="nameandbrand">
@@ -63,8 +64,8 @@
                     </div>
                     <div class="typeram">
                         <label>მეხსიერების ტიპი</label></br>
-                        <input type="radio" class="rmtype" required> SDD
-                        <input style="margin-left: 30px;" type="radio" class="rmtype" required> HDD
+                        <input type="radio" class="rmtype" id="fradio" required> SDD
+                        <input style="margin-left: 30px;" type="radio" id="sradio" class="rmtype" required> HDD
                     </div>
                 </div>
                 <div class="priceanddate">
@@ -79,11 +80,11 @@
                 </div>
                 <div class="neworold">
                     <label>ლეპტოპის მდგომარეობა</label></br>
-                    <input type="radio" class="mdgomareoba" required> ახალი
-                    <input style="margin-left: 30px;" type="radio" class="mdgomareoba" required> მეორადი
+                    <input type="radio" class="mdgomareoba" id="new" required> ახალი
+                    <input style="margin-left: 30px;" type="radio" class="mdgomareoba" id="old" required> მეორადი
                 </div>
                 <div class="backandsave">
-                    <a onclick="history.back()" class="goback">უკან</a>
+                    <a href="../informationpage/info.html" class="goback">უკან</a>
                     <a href="#"  id="save" onclick="save()">დამახსოვრება</a>
                 </div>
             </div>
