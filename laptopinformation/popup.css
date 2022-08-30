@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: Hel;
+    src: url(../Font/HelveticaNeue.ttc);
+}
+
+.fullscreen {
+    width: 100%;
+    height: 100%;
+    z-index: 11111111;
+    top: 0;
+    background-color: #4A4A4A;
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.popupbox {
+    position: relative;
+    width: 850px;
+    height: 550px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.pupupboxinside {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    text-align: center;
+}
+.popouipimg {
+    position: absolute;
+    left: 350px;
+    top: -110px;
+}
+.added {
+    margin-top: 120px;
+    font-family: Hel;
+    font-size: 28px;
+    margin-bottom: 50px;
+}
+
+.list {
+    background-color: #62A1EB;
+    color: white;
+    font-family: Hel;
+    font-size: 12px;
+    padding: 20px 40px 20px 40px;
+    border-radius: 5px;
+    margin-left: 120px;
+    cursor: pointer;
+   
+}
+
+
+.mainpage {
+    margin-top: 50px;
+}
+
+.mainpage a {
+    color: #62A1EB;
+    font-family: Hel;
+    margin-left: 110px;
+    cursor: pointer;
+}

@@ -48,6 +48,7 @@ const fasi = document.querySelector('.nprice');
 const body = document.querySelector('body');
 const img = document.querySelector('.img');
 
+
 upload.addEventListener('change', ()=>{
     if (upload.files && upload.files[0]) {
         var reader = new FileReader();
@@ -61,6 +62,8 @@ upload.addEventListener('change', ()=>{
         reader.readAsDataURL(upload.files[0]);
     }
 })
+
+const success = document.querySelector('.fullscreen');
 
 function save() {
     localStorage.setItem("laptopname", JSON.stringify(laptopname.value));
@@ -91,12 +94,16 @@ function save() {
             birtvii: birtvi.value,
             nakaddi: nakadi.value,
             ramm: rami.value,
-            ramtype: ssd.value,
-            ramtypee: hdd.value,
+            ramtype: localStorage.getItem("typeofram"),
             dro: tarigi.value,
             tanxa: fasi.value,
-            axalii: axali.value,
-            meoradii: meoreadi.value,
+            neworused: localStorage.getItem('new or old'),
+            name: localStorage.getItem("name"),
+            lastname: localStorage.getItem("lastName"),
+            team: localStorage.getItem('team'),
+            position: localStorage.getItem("position"),
+            meil: localStorage.getItem("email"),
+            number: localStorage.getItem("nomeri")
         }),
         headers: {
             "Content-Type":"application/json; charset=UTF-8"
@@ -106,29 +113,71 @@ function save() {
     }).then(function(datas){
         console.log(datas);
     })
+    success.style.display = "flex";
 }
 
 
-const fradio = document.querySelector('#fradio');
-const sradio = document.querySelector('#sradio');
 const axali = document.querySelector('#new');
 const meoreadi = document.querySelector('#old');
 axali.value = "ახალი";
 meoreadi.value = "მეორადი";
 
-window.addEventListener('change', (e)=> {
-        if(!e.target.contains(fradio)){
-            fradio.checked = false;
-        }
+// window.addEventListener('change', (e)=> {
+//         if(!e.target.contains(fradio)){
+//             fradio.checked = false;
+//         }
     
-        if(!e.target.contains(sradio)){
-            sradio.checked = false;
-        }
-        if(!e.target.contains(axali)){
-            axali.checked = false;
-        }
-        if(!e.target.contains(meoreadi)){
-            meoreadi.checked = false;
-        }
+//         if(!e.target.contains(sradio)){
+//             sradio.checked = false;
+//         }
+//         if(!e.target.contains(axali)){
+//             axali.checked = false;
+//         }
+//         if(!e.target.contains(meoreadi)){
+//             meoreadi.checked = false;
+//         }
    
+// })
+
+window.addEventListener("load", ()=>{
+    laptopname.value = localStorage.getItem("laptopname").replaceAll('"', '');
+    birtvi.value = localStorage.getItem("birtvi").replaceAll('"', '');
+    nakadi.value = localStorage.getItem("nakadi").replaceAll('"', '');
+    rami.value = localStorage.getItem("ram").replaceAll('"', '');
+    tarigi.value = localStorage.getItem("date").replaceAll('"', '');
+    fasi.value = localStorage.getItem("price").replaceAll('"', '');
 })
+
+const saveinfo = document.querySelector('#save');
+const usedornew = document.querySelector('.mdgomareoba');
+const ssdorhdd = document.querySelector('.rmtype');
+
+window.addEventListener('input', ()=> {
+    if(laptopname.value != "" && birtvi.value != "" && nakadi.value != "" && 
+    rami.value != "" && tarigi.value != "" && fasi.value != ""){
+        saveinfo.classList.remove('dontsave');
+    }else {
+        saveinfo.classList.add('dontsave');
+    }
+})
+
+function gobck() {
+    localStorage.setItem("laptopname", JSON.stringify(laptopname.value));
+    localStorage.setItem("brand", JSON.stringify(brendi.value));
+    localStorage.setItem("cpu", JSON.stringify(cpuoption.value));
+    localStorage.setItem("birtvi", JSON.stringify(birtvi.value));
+    localStorage.setItem("nakadi", JSON.stringify(nakadi.value));
+    localStorage.setItem("ram", JSON.stringify(rami.value));
+    if(ssd.checked){
+        localStorage.setItem("typeofram", JSON.stringify(ssd.value));
+    }else {
+        localStorage.setItem("typeofram", JSON.stringify(hdd.value));
+    }
+    localStorage.setItem("date", JSON.stringify(tarigi.value));
+    localStorage.setItem("price", JSON.stringify(fasi.value));
+    if(axali.checked){
+        localStorage.setItem("new or old", JSON.stringify(axali.value));
+    }else{
+        localStorage.setItem("new or old", JSON.stringify(meoreadi.value));
+    }
+}

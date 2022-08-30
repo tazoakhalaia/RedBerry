@@ -5,11 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../informationpage/infopageimg/logo.png">
+    <link rel="stylesheet" href="popup.css">
     <link rel="stylesheet" href="laptop.css">
     <script src="laptopinfo.js" defer></script>
     <title>ლეპტოპის ინფორმაცია</title>
 </head>
 <body>
+    <!--popup-->
+    <div class="fullscreen">
+        <div class="popupbox">
+            <div class="pupupboxinside">
+            <img src="./popupimg/frame.png" class="popouipimg">
+            <h1 class="added">ჩანაწერი დამატებულია!</h1>
+            <a href="#" class="list">სიაში გადაყვანა</a>
+            <div class="mainpage">
+            <a href="../index.html" >მთავარი</a>
+        </div>
+        </div>
+        </div>
+    </div>
+    <!--end of popup-->
     <div class="backarrow">
         <a href="../index.html"><img src="../informationpage/infopageimg/backarrow.png" alt="backarrow"></a>
     </div>
@@ -84,8 +99,8 @@
                     <input style="margin-left: 30px;" type="radio" class="mdgomareoba" id="old" required> მეორადი
                 </div>
                 <div class="backandsave">
-                    <a href="../informationpage/info.html" class="goback">უკან</a>
-                    <a href="#"  id="save" onclick="save()">დამახსოვრება</a>
+                    <a href="../informationpage/info.html" class="goback" onclick="gobck()">უკან</a>
+                    <a href="#"  id="save" class="dontsave" onclick="save()">დამახსოვრება</a>
                 </div>
             </div>
         </form>

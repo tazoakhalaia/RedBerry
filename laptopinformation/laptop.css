@@ -307,6 +307,6 @@ input::-webkit-inner-spin-button {
 
 }
 
-.ponterevents {
+.dontsave {
     pointer-events: none;
 }

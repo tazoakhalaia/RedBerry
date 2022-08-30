@@ -59,7 +59,7 @@ const positions = async() => {
     //validation//
 const labelname = document.querySelector('.saxeli');
 const h4 = document.querySelector('h4');
-const inputName = document.querySelector('.fullname');
+const inputName = document.querySelector('.fullname'); 
 const regex = /[^a-z0-9\s]/gi;
 
 
@@ -126,4 +126,12 @@ window.addEventListener('input', ()=> {
     }else {
         btn.classList.add('ponterevents');
     }
+})
+
+
+window.addEventListener("load", ()=>{
+    inputName.value = localStorage.getItem("name").replaceAll('"', '');
+    inputlastName.value = localStorage.getItem("lastName").replaceAll('"', '');
+    email.value = localStorage.getItem("email").replaceAll('"', '');
+    nomeri.value = localStorage.getItem("nomeri").replaceAll('"', '');
 })
