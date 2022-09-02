@@ -19,7 +19,7 @@
             <h1 class="added">ჩანაწერი დამატებულია!</h1>
             <a href="#" class="list">სიაში გადაყვანა</a>
             <div class="mainpage">
-            <a href="../index.html" >მთავარი</a>
+            <a href="../index.html" onclick="clearlocal()" >მთავარი</a>
         </div>
         </div>
         </div>
@@ -39,14 +39,14 @@
                 <div class="mainform">
                     <!--suratis atvirtva-->
                 <div class="uploadimg">
-                    <input type="file" name="upload" class="upload" accept="image/*">
+                    <input type="file" name="upload" class="upload" accept="image/jpeg, image/png, image/jpg">
                     <h2 class="laptoppic">ჩააგდე ან ატვირთე ლეპტოპის ფოტო</h2>
                     <img class="img" src="">
                 </div>
                 <!--konpiuteris berndebi-->
                 <div class="nameandbrand">
                     <div class="laptopnm">
-                    <label for="text">ლეპტოპის სახელი</label></br>
+                    <label for="text">ლეპტოპის სახელი</label><br>
                     <input type="text" placeholder="ლეპტოპის სახელი" class="laptopname">
                     <h2 class="mustwrite">ლათინური ასოები, ციფრები, !@#$%%^*()_+=</h2>
                 </div>
@@ -61,46 +61,48 @@
                         <option disabled selected value>CPU</option>
                     </select>
                     <div class="cpubirtvi">
-                        <label>CPU-ს ბირთვი</label></br>
+                        <label>CPU-ს ბირთვი</label><br>
                         <input type="number" class="birtvi" placeholder="14" required>
                         <h2 class="mustwrite">მხოლოდ ციფრები</h2>
                     </div>
                     <div class="cpunakadi">
-                        <label>CPU-ს ნაკადი</label></br>
+                        <label>CPU-ს ნაკადი</label><br>
                         <input type="number" class="nakadi" placeholder="365" required>
                         <h2 class="mustwrite">მხოლოდ ციფრები</h2>
                     </div>
                 </div>
                 <div class="memory">
                     <div class="ram">
-                        <label>ლეპტოპის RAM(GB)</label></br>
+                        <label>ლეპტოპის RAM(GB)</label><br>
                         <input type="number" class="ramgb" placeholder="16" required>
                         <h2 class="mustwrite">მხოლოდ ციფრები</h2>
                     </div>
                     <div class="typeram">
-                        <label>მეხსიერების ტიპი</label></br>
+                        <label>მეხსიერების ტიპი</label><br>
                         <input type="radio" class="rmtype" id="fradio" required> SDD
                         <input style="margin-left: 30px;" type="radio" id="sradio" class="rmtype" required> HDD
                     </div>
                 </div>
+                <hr>
                 <div class="priceanddate">
                     <div class="date">
-                        <label>შეძენის რიცხვი(არჩევითი)</label></br>
-                        <input type="date" class="ndate" placeholder="დდ/თთ/წწწწ" required>
-                    </div><div class="price">
-                        <label>ლეპტოპის ფასი</label></br>
+                        <label>შეძენის რიცხვი(არჩევითი)</label><br>
+                        <input type="date" class="ndate" required>
+                    </div>
+                    <div class="price">
+                        <label>ლეპტოპის ფასი</label><br>
                         <input type="number" class="nprice" placeholder="0000" required>
                         <h2 class="mustwrite">მხოლოდ ციფრები</h2>
                     </div>
                 </div>
                 <div class="neworold">
-                    <label>ლეპტოპის მდგომარეობა</label></br>
+                    <label>ლეპტოპის მდგომარეობა</label><br>
                     <input type="radio" class="mdgomareoba" id="new" required> ახალი
                     <input style="margin-left: 30px;" type="radio" class="mdgomareoba" id="old" required> მეორადი
                 </div>
                 <div class="backandsave">
                     <a href="../informationpage/info.html" class="goback" onclick="gobck()">უკან</a>
-                    <a href="#"  id="save" class="dontsave" onclick="save()">დამახსოვრება</a>
+                    <a href="#"  id="save" class="dontsave" onclick="dataSave()">დამახსოვრება</a>
                 </div>
             </div>
         </form>

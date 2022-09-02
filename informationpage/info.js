@@ -50,6 +50,7 @@ const positions = async() => {
              for(var i = 0; i <= res.data.length; i++){
                 if(res.data[i].team_id == id){
                     position.innerHTML += `<option>${res.data[i].name}</option>`
+                    localStorage.setItem("team_id", res.data[i].team_id);
                 }
              }
         })
@@ -67,13 +68,16 @@ function check() {
     if(inputName.value.match(regex)){
         h4.innerText = "მინიმუმ 2 სიმბოლო, ქართული ასოები";
         h4.style.color = "green";
+        inputName.style.borderColor = "#62A1EB";
     }else {
         h4.innerText = "გამოიყენეთ ქართული ასოები და შეიყვანეთ მინიმუმ 2 სიმბოლო";
         h4.style.color = "black";
+        inputName.style.borderColor = "red";
     }
     if(inputName.value == ""){
         h4.innerText = "მინიმუმ 2 სიმბოლო, ქართული ასოები";
         h4.style.color = "black";
+        inputName.style.borderColor = "#62A1EB";
     }
 }
 
@@ -83,13 +87,16 @@ function checkLastName() {
     if(inputlastName.value.match(regex)){
         lastnameh4.innerText = "მინიმუმ 2 სიმბოლო, ქართული ასოები";
         lastnameh4.style.color = "green";
+        inputlastName.style.borderColor = "#62A1EB";
     }else {
         lastnameh4.innerText = "გამოიყენეთ ქართული ასოები და შეიყვანეთ მინიმუმ 2 სიმბოლო";
         lastnameh4.style.color = "black";
+        inputlastName.style.borderColor = "red";
     }
     if(inputlastName.value == ""){
         lastnameh4.innerText = "მინიმუმ 2 სიმბოლო, ქართული ასოები";
         lastnameh4.style.color = "black";
+        inputlastName.style.borderColor = "#62A1EB";
     }
 }
 
@@ -110,6 +117,18 @@ function checkemail() {
 const btn = document.querySelector('#button');
 const nomeri = document.querySelector('.telefoni');
 const nomeriregex = /^(\+?995)?(79\d{7}|5\d{8})$/;
+
+nomeri.addEventListener('input', ()=>{
+    if(nomeri.value.match(nomeriregex)){
+        nomeri.style.borderColor = "#62A1EB";
+    }else{
+        nomeri.style.borderColor = "red";
+    }
+    if(nomeri.value == ""){
+        nomeri.style.borderColor = "#62A1EB"
+    }
+})
+
 function addData() {
     localStorage.setItem("name", JSON.stringify(inputName.value));
     localStorage.setItem("lastName", JSON.stringify(inputlastName.value));
